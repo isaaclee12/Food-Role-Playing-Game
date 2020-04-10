@@ -71,13 +71,13 @@ int main() {
             current_boss = make_unique<Egg_Boss>();
 
             //Make window show up with enemy
-            syscommand = python + " ../getImage.py " + "egg.jpg";
+            syscommand = python + " ../getImage.py " + "egg_enemy.jpg";
             system(syscommand.c_str());
 
         } else if (command == 2) {
             current_boss = make_unique<Kombucha_Boss>();
 
-            syscommand = python + " ../getImage.py " + "egg.jpg";
+            syscommand = python + " ../getImage.py " + "kombucha_enemy.jpg";
             system(syscommand.c_str());
 
         } else if (command == 3) {

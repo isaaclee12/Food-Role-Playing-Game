@@ -8,7 +8,7 @@
 #include "Boss_Fight.h"
 
 //Create optional
-typedef experimental::optional<string> opt_string;
+typedef optional<string> opt_string;
 
 class Egg_Boss : public Boss_Fight {
 protected:
@@ -22,7 +22,7 @@ public:
         f_hit_points = f_default_hit_points;
         f_attack = 100; //High attack because uuuuuuuuhhhh egg.
         f_defense = 10; //Low defense because eggshells crack easily
-        opt_string f_weakness = experimental::nullopt;
+        opt_string f_weakness = nullopt;
         f_weakness_ptr = make_unique<opt_string>(f_weakness);
         f_roll = rand() % 2 + 1; //1, 2, or 3
     }
@@ -52,7 +52,7 @@ public:
         f_hit_points = f_default_hit_points;
         f_attack = 10; //Low attack because kombucha is harmless
         f_defense = 100; //High defense because kombucha jars are HARD
-        opt_string f_weakness = experimental::nullopt;
+        opt_string f_weakness = nullopt;
         f_weakness_ptr = make_unique<opt_string>(f_weakness);
         f_roll = rand() % 2 + 1; //1, 2, or 3
     }
@@ -81,7 +81,7 @@ public:
         f_hit_points = f_default_hit_points;
         f_attack = 10; //Low attack because fish is harmless
         f_defense = 10; //Low defense because fish are harmless
-        opt_string f_weakness = experimental::nullopt;
+        opt_string f_weakness = nullopt;
         f_weakness_ptr = make_unique<opt_string>(f_weakness);
         f_roll = rand() % 2 + 1; //1, 2, or 3
     }

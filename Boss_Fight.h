@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <experimental/optional>
+#include <optional>
 #include <time.h>
 #include <memory>
 #include <vector>
@@ -8,7 +8,7 @@
 using namespace std;
 
 //Create optional
-typedef experimental::optional<string> opt_string;
+typedef optional<string> opt_string;
 
 //Establishment of the Boss Fight class and its functions and fields
 
@@ -31,7 +31,7 @@ public:
         f_hit_points = f_default_hit_points;
         f_attack = 50;
         f_defense = 50;
-        opt_string f_weakness = experimental::nullopt;
+        opt_string f_weakness = nullopt;
         f_weakness_ptr = make_unique<opt_string>(f_weakness);
         f_roll = rand() % 2 + 1; //1, 2, or 3
     }
@@ -91,7 +91,7 @@ public:
 
     //Delete weakness
     void delete_weakness() {
-        f_weakness = experimental::nullopt;
+        f_weakness = nullopt;
     }
 
     //Actions
