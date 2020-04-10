@@ -31,31 +31,6 @@ int main() {
     string boss_stats;
 
 
-    //init for demonstration
-    name = "The player";
-
-    //POLYMORPHISM DEMONSTRATION
-    cout << endl << "I WILL NOW DISPLAY THE MAGICAL WORLD OF C++ POLYMORPHISM" << endl;
-    cout << "Here are three children of Boss_Fight which I have created: " << endl;
-
-    //Vars.
-    unique_ptr<Boss_Fight> egg = make_unique<Egg_Boss>();
-    unique_ptr<Boss_Fight> kombucha = make_unique<Kombucha_Boss>();
-    unique_ptr<Boss_Fight> fish = make_unique<Fish_Boss>();
-
-    //Print the stuff, do the actions
-    cout << endl << endl << egg->get_name() << " which does this as an action:" << endl << endl;
-    egg->boss_turn(name, player_mana, player_hit_points);
-    cout << endl << endl <<kombucha->get_name() << " which does this as an action: " << endl << endl;
-    kombucha->boss_turn(name, player_mana, player_hit_points);
-    cout << endl << endl << fish->get_name() << " which does this as an action: " << endl << endl;
-    fish->boss_turn(name, player_mana, player_hit_points);
-
-    //Explanation.
-    cout << endl << endl << "As you can see, each of these children of Boss_Fight do different things when the "
-                            "same functions (get_name and boss_turn) called." << endl << endl;
-
-
     while (playing) {
         //Print Opening Prompt, get player's name
         cout << endl << "WELCOME TO THE FOOD ARENA" << endl << endl << "Enter your name:" << endl << endl;
