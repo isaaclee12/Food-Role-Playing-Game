@@ -30,6 +30,7 @@ int main() {
     bool playing = true;
     bool boss_alive;
     int command;
+    int boss_chosen;
     string syscommand;
 
     //Player Stats
@@ -70,6 +71,9 @@ int main() {
             cout << endl << "Choose an enemy: " << endl << "(1) Egg Boy" << endl << "(2) Kombucha Boy" << endl << "(3) Fish Boy" << endl;
         }
 
+        //Save which boss they chose
+        boss_chosen = command;
+
         // Establish pointer for the current boss being fought
         unique_ptr<Boss_Fight> current_boss = make_unique<Boss_Fight>();
 
@@ -89,6 +93,10 @@ int main() {
 
         } else if (command == 3) {
             current_boss = make_unique<Fish_Boss>();
+
+            syscommand = python + " ../getImage.py " + "fish_enemy.png";
+            system(syscommand.c_str());
+
         }
 
         //Display chosen enemy name
@@ -179,6 +187,22 @@ int main() {
                 if (boss_alive) {
                     current_boss->boss_turn(name, player_mana, player_hit_points);
                 } else if (!boss_alive && player_hit_points > 0) {
+
+
+                    //PLAYER WIN STATE
+                    //Display dead enemy depending on which one was chosen
+                    if (boss_chosen == 1) {
+                        syscommand = python + " ../getImage.py " + "egg_enemy_defeated.png";
+                        system(syscommand.c_str());
+                    } else if (boss_chosen == 2) {
+                        syscommand = python + " ../getImage.py " + "kombucha_enemy_defeated.png";
+                        system(syscommand.c_str());
+                    } else if (boss_chosen == 3) {
+                        syscommand = python + " ../getImage.py " + "fish_enemy_defeated.png";
+                        system(syscommand.c_str());
+                    }
+
+
                     cout << "ENEMY DEFEATED! YOU WIN!" << endl;
                     cout << "You go back to your dorm and sleep a lot zzzzzzzz" << endl;
                 }

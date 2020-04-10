@@ -12,6 +12,9 @@ environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 #mp3s - "pip install pygame"
 from pygame import mixer
 
+#timer
+from threading import Timer
+
 # Store command line arguments in variables
 # TODO: change the next line to store the filename
 filename = sys.argv[1]
@@ -33,10 +36,24 @@ cv2.namedWindow(image)
 cv2.moveWindow(image, 0, 0)
 cv2.imshow(image, img)
 
+
 # Infinite loop to keep the windows open until the escape key is pressed.
 while True:
     k = cv2.waitKey(1)
     if k == 27:
         cv2.destroyAllWindows()
         exit()
+
+
+
+# def end():
+#     cv2.destroyAllWindows()
+#     exit()
+#
+# #Closes the thing after 5 seconds
+# t = Timer (5.0, end)
+# t.start()
+
+
+
 
