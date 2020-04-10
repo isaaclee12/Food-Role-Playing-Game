@@ -17,7 +17,7 @@ from pygame import mixer
 filename = sys.argv[1]
 
 # Open the image file
-img = cv2.imread('enemy_images/' + filename)
+img = cv2.imread('../' + filename)
 
 #mp3 https://stackoverflow.com/questions/20021457/playing-mp3-song-on-python
 #https://www.zapsplat.com/sound-effect-category/explosions/
