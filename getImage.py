@@ -1,15 +1,15 @@
+#getImage python file based on sample code given
 # TODO: you will need to install cv2
 # Run "pip3 install opencv-python" in CLI
 import cv2
 import sys
-# Extra credit requires numpy. Uncomment this line and install it if you need to.
-#import numpy as np
 
 #remove pygame print text https://stackoverflow.com/questions/54246668/how-do-i-delete-the-hello-from-the-pygame-community-console-alert-while-using/54246669
 from os import environ
 environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 
-#mp3s - "pip install pygame"
+# TODO: you will need to install pygame
+#Run "pip3 install pygame" in CLT to have sound
 from pygame import mixer
 
 #timer
