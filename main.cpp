@@ -30,7 +30,6 @@ int main() {
     bool playing = true;
     bool boss_alive;
     int command;
-    string filename;
     string syscommand;
 
     //Player Stats
@@ -48,8 +47,13 @@ int main() {
         cout << endl << "WELCOME TO THE FOOD ARENA" << endl << endl << "Enter your name:" << endl << endl;
         cin >> name;
 
-        cout << endl << "DEV NOTE: Elemental Weaknesses now work. Try using fire on egg boy, ice on kombucha boy, or lightning on fish boy!" << endl;
+        cout << endl << "TIP Try using fire on egg boy, ice on kombucha boy, or lightning on fish boy!" << endl;
+        cout << "VOLUME WARNING: TURN DOWN YOUR HEADPHONES VOLUME NOW BECAUSE THERE IS A LOUD MP3" << endl;
+        cout << "VOLUME WARNING: TURN DOWN YOUR HEADPHONES VOLUME NOW BECAUSE THERE IS A LOUD MP3" << endl;
+        cout << "VOLUME WARNING: TURN DOWN YOUR HEADPHONES VOLUME NOW BECAUSE THERE IS A LOUD MP3" << endl;
+        cout << "VOLUME WARNING: TURN DOWN YOUR HEADPHONES VOLUME NOW BECAUSE THERE IS A LOUD MP3" << endl;
         cout << endl << "Choose an enemy: " << endl << "(1) Egg Boy" << endl << "(2) Kombucha Boy" << endl << "(3) Fish Boy" << endl;
+
         while (!(cin >> command) || (command != 1 && command != 2 && command != 3)) {
             //Input validator - Make sure value isn't 0
             cin.clear();
@@ -65,11 +69,17 @@ int main() {
         //Player chooses which enemy to fight and the enemy changes accordingly.
         if (command == 1) {
             current_boss = make_unique<Egg_Boss>();
-            filename = "egg.jpg";
-            syscommand = python + " ../image.py " + filename;
+
+            //Make window show up with enemy
+            syscommand = python + " ../getImage.py " + "egg.jpg";
             system(syscommand.c_str());
+
         } else if (command == 2) {
             current_boss = make_unique<Kombucha_Boss>();
+
+            syscommand = python + " ../getImage.py " + "egg.jpg";
+            system(syscommand.c_str());
+
         } else if (command == 3) {
             current_boss = make_unique<Fish_Boss>();
         }
