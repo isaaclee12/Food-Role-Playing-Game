@@ -2,9 +2,18 @@
 // Created by isaac on 1/18/2020.
 //
 
+#include <fstream>
 #include "Boss_Children.h"
 #include "Spell_Caster.h"
 using namespace std;
+
+//Python checker
+#ifdef _WIN32
+const string python = "python";
+#else
+const string python = "python3";
+#endif
+
 
 //Runs the main program for the battle to run properly
 //Also runs the Menus and input interpretation for the actions and spells
@@ -21,6 +30,8 @@ int main() {
     bool playing = true;
     bool boss_alive;
     int command;
+    string filename;
+    string syscommand;
 
     //Player Stats
     int player_hit_points;
@@ -29,6 +40,7 @@ int main() {
     bool player_acting;
 
     string boss_stats;
+
 
 
     while (playing) {
@@ -53,6 +65,9 @@ int main() {
         //Player chooses which enemy to fight and the enemy changes accordingly.
         if (command == 1) {
             current_boss = make_unique<Egg_Boss>();
+            filename = "egg.jpg";
+            syscommand = python + " ../image.py " + filename;
+            system(syscommand.c_str());
         } else if (command == 2) {
             current_boss = make_unique<Kombucha_Boss>();
         } else if (command == 3) {
