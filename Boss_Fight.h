@@ -16,7 +16,7 @@ class Boss_Fight {
 
 protected:
     string f_name;
-    const int f_default_hit_points = 100;
+    const int f_default_hit_points = 500;
     int f_hit_points;
     int f_attack;
     int f_defense;

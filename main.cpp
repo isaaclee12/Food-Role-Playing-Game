@@ -78,6 +78,9 @@ int main() {
         unique_ptr<Boss_Fight> current_boss = make_unique<Boss_Fight>();
 
         //Player chooses which enemy to fight and the enemy changes accordingly.
+
+        cout << "(Press Esc to continue)" << endl;
+
         if (command == 1) {
             current_boss = make_unique<Egg_Boss>();
 
@@ -188,6 +191,21 @@ int main() {
                     current_boss->boss_turn(name, player_mana, player_hit_points);
                 } else if (!boss_alive && player_hit_points > 0) {
 
+                    cout << "ENEMY DEFEATED! YOU WIN!" << endl;
+
+                    //Volume warning
+                    cout << "VOLUME WARNING: TURN DOWN YOUR HEADPHONES VOLUME NOW BECAUSE THERE IS A LOUD MP3. Press 1 if you understand." << endl;
+                    while (!(cin >> command) || (command != 1)) {
+                        //Input validator - Make sure value isn't 0
+                        cin.clear();
+                        string junk;
+                        getline(cin, junk);
+                        cout << "ERROR: Did not input 1" << endl;
+                        cout << "VOLUME WARNING: TURN DOWN YOUR HEADPHONES VOLUME NOW BECAUSE THERE IS A LOUD MP3. Press 1 if you understand." << endl;
+                    }
+
+                    cout << endl << "(Press Esc to continue)" << endl;
+
 
                     //PLAYER WIN STATE
                     //Display dead enemy depending on which one was chosen
@@ -203,7 +221,7 @@ int main() {
                     }
 
 
-                    cout << "ENEMY DEFEATED! YOU WIN!" << endl;
+
                     cout << "You go back to your dorm and sleep a lot zzzzzzzz" << endl;
                 }
 
